@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     Scanner sc=new Scanner(System.in);
-//    For First name
+//    For entering First name
     public void firstName(){
         System.out.println("Enter First Name:");
         String fname=sc.next();
@@ -21,7 +21,7 @@ public class UserRegistration {
             System.out.println("Invalid Input");
         }
     }
-//    For Second name
+//    For entering Second name
     public void lastName(){
         System.out.println("Enter Last Name:");
         String lname=sc.next();
@@ -36,7 +36,7 @@ public class UserRegistration {
             System.out.println("Invalid Input");
         }
     }
-
+//  For Email Validation
     public void email(){
         System.out.println("Enter your Email:");
         String email = sc.next();
@@ -51,12 +51,29 @@ public class UserRegistration {
             System.out.println("Invalid Email");
         }
     }
+//For Adding mobile number
+    public void mobileNumber(){
+        System.out.println("Enter your mobile number:");
+        String number = sc.next();
+
+        Pattern p = Pattern.compile("^[789]{1}[0-9]{9}$");
+        Matcher m = p.matcher(number);
+
+        if(m.matches()){
+            System.out.println("Valid Mobile Number");
+        }
+        else{
+            System.out.println("Invalid Mobile Number");
+        }
+
+    }
     public static void main(String[] args) {
         System.out.println("WELCOME TO USER REGISTRATION!");
         UserRegistration userRegistration=new UserRegistration();
         userRegistration.firstName();
         userRegistration.lastName();
         userRegistration.email();
+        userRegistration.mobileNumber();
 
     }
 }
