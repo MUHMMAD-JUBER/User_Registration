@@ -75,7 +75,7 @@ public class UserRegistration {
         System.out.println("Enter your Password:");
         String password = sc.next();
 
-        Pattern p = Pattern.compile("^[a-zA-Z]{8,}$");
+        Pattern p = Pattern.compile("^[A-Z]{1,}[a-zA-Z]{7,}$");
         Matcher m = p.matcher(password);
 
         if(m.matches()){
@@ -95,6 +95,7 @@ public class UserRegistration {
         userRegistration.email();
         userRegistration.mobileNumber();
         userRegistration.password();
+
 
     }
 }
