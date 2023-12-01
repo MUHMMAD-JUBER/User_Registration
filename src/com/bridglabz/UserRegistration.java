@@ -60,13 +60,33 @@ public class UserRegistration {
         Matcher m = p.matcher(number);
 
         if(m.matches()){
-            System.out.println("Valid Mobile Number");
+            System.out.println("Valid mobile number");
         }
         else{
-            System.out.println("Invalid Mobile Number");
+            System.out.println("Invalid mobile number");
         }
 
     }
+
+/*    Updating Password here which enhance security of the program, here we use
+      a specific character, number and symbol pattern to use the password input*/
+
+    public void password(){
+        System.out.println("Enter your Password:");
+        String password = sc.next();
+
+        Pattern p = Pattern.compile("^[a-zA-Z]{8,}$");
+        Matcher m = p.matcher(password);
+
+        if(m.matches()){
+            System.out.println("Valid  Password");
+        }
+        else{
+            System.out.println("Invalid  Password");
+        }
+
+    }
+
     public static void main(String[] args) {
         System.out.println("WELCOME TO USER REGISTRATION!");
         UserRegistration userRegistration=new UserRegistration();
@@ -74,6 +94,7 @@ public class UserRegistration {
         userRegistration.lastName();
         userRegistration.email();
         userRegistration.mobileNumber();
+        userRegistration.password();
 
     }
 }
